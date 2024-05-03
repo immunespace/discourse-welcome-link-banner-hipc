@@ -11,7 +11,7 @@ acceptance("Welcome Link Banner - Logged out", function () {
     await visit("/latest");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .doesNotExist("hides the banner for anons");
   });
 
@@ -20,7 +20,7 @@ acceptance("Welcome Link Banner - Logged out", function () {
     await visit("/latest");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .exists("hides the banner for anons");
   });
 });
@@ -38,7 +38,7 @@ acceptance("Welcome Link Banner - Logged in", function (needs) {
     await visit("/latest");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .doesNotExist("hides the banner for staff");
   });
 
@@ -52,7 +52,7 @@ acceptance("Welcome Link Banner - Logged in", function (needs) {
     await visit("/latest");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .doesNotExist("hides the banner by trust level");
   });
 
@@ -62,13 +62,13 @@ acceptance("Welcome Link Banner - Logged in", function (needs) {
     await visit("/");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .exists("shows the banner by route");
 
     await visit("/top");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .doesNotExist("hides the banner by route");
   });
 
@@ -82,7 +82,7 @@ acceptance("Welcome Link Banner - Logged in", function (needs) {
     await visit("/latest");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .exists("shows the banner by trust level");
   });
 
@@ -91,7 +91,7 @@ acceptance("Welcome Link Banner - Logged in", function (needs) {
     settings.hide_on_mobile = true;
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .doesNotExist("hides the banner on mobile");
   });
 
@@ -101,13 +101,13 @@ acceptance("Welcome Link Banner - Logged in", function (needs) {
     await visit("/latest");
 
     assert
-      .dom(".welcome-link-banner-wrapper .welcome-link-banner-close")
+      .dom(".welcome-link-banner-wrapper-hipc .welcome-link-banner-close")
       .exists("shows the close button");
 
-    await click(".welcome-link-banner-wrapper .welcome-link-banner-close");
+    await click(".welcome-link-banner-wrapper-hipc .welcome-link-banner-close");
 
     assert
-      .dom(".welcome-link-banner-wrapper")
+      .dom(".welcome-link-banner-wrapper-hipc")
       .doesNotExist("clicking the close button hides the banner");
   });
 });
